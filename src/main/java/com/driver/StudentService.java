@@ -39,8 +39,12 @@ public class StudentService {
         return studentRepository.getAllStudents();
     }
 
-    public void deleteAllTeachersFromDB(){
-        studentRepository.deleteAllTeachers();
+    public void deleteStudentByTeacherName(String name){
+        studentRepository.deleteStudentByTeacherName(name);
+    }
+
+    public void deleteAllStudentsAndTeachersFromDB(){
+        studentRepository.deleteAllStudentAndTeachers();
     }
 
 
