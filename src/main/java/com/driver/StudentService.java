@@ -20,6 +20,10 @@ public class StudentService {
         studentRepository.addTeacherInDB(teacher);
     }
 
+    public void mapStudentToTeacher(String s_name, String t_name){
+        studentRepository.mapStudentToTeacher(s_name, t_name);
+    }
+
     public Student getStudentFromDB(String studentName){
         return studentRepository.findStudentFromDB(studentName);
     }
@@ -28,6 +32,9 @@ public class StudentService {
         return studentRepository.findTeacherFromDB(teacherName);
     }
 
+    public List<String> getStudentsByTeacherName(String teacherName){
+        return studentRepository.findStudentsByTeacherName(teacherName);
+    }
     public List<String> getAllStudentFromDB(){
         return studentRepository.getAllStudents();
     }
