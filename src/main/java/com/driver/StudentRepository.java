@@ -76,8 +76,6 @@ public class StudentRepository {
     }
 
     public void deleteAllStudentAndTeachers(){
-        //HashSet<String> studentSet = new HashSet<>();
-
         for(String t : studentTeacherMapping.keySet()){
             for(String s : studentTeacherMapping.get(t)){
                 studentHashMap.remove(s);
