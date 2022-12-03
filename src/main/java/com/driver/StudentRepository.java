@@ -44,7 +44,10 @@ public class StudentRepository {
     }
 
     public List<String> findStudentsByTeacherName(String teacherName){
-        return studentTeacherMapping.get(teacherName);
+        if(studentTeacherMapping.containsKey(teacherName)){
+            return studentTeacherMapping.get(teacherName);
+        }
+        return null;
     }
 
     public List<String> getAllStudents(){
@@ -58,8 +61,8 @@ public class StudentRepository {
     public void deleteStudentByTeacherName(String name){
         if(studentTeacherMapping.containsKey(name)){
             List<String> studentList = studentTeacherMapping.get(name);
-            for(String s: studentHashMap.keySet()){
-                if(studentList.contains(s)){
+            for(String s: studentList){
+                if(studentHashMap.containsKey(s)){
                     studentHashMap.remove(s);
                 }
             }
